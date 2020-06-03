@@ -13,7 +13,7 @@
 <meta property="og:description" content="springboot接入阿里云对象存储OSS pom文件引入starter依赖1234&lt;dependency&gt;    &lt;groupId&gt;com.alibaba.cloud&lt;&#x2F;groupId&gt;    &lt;artifactId&gt;spring-cloud-starter-alicloud-oss&lt;&#x2F;artifactId&gt;&lt;&#x2F;dependen">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-06-03T08:11:39.012Z">
-<meta property="article:modified_time" content="2020-06-03T08:57:13.169Z">
+<meta property="article:modified_time" content="2020-06-03T08:59:11.354Z">
 <meta property="article:author" content="penghui li">
 <meta property="article:tag" content="oss">
 <meta name="twitter:card" content="summary">
@@ -133,7 +133,6 @@
       
         <p>springboot接入阿里云对象存储OSS</p>
 <h3 id="pom文件引入starter依赖"><a href="#pom文件引入starter依赖" class="headerlink" title="pom文件引入starter依赖"></a>pom文件引入starter依赖</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;com.alibaba.cloud&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-cloud-starter-alicloud-oss&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
 
 <h3 id="yml文件加入-access-key-secret-key-endpoint"><a href="#yml文件加入-access-key-secret-key-endpoint" class="headerlink" title="yml文件加入 access-key,secret-key,endpoint"></a>yml文件加入 access-key,secret-key,endpoint</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line">   cloud:</span><br><span class="line">      alicloud:</span><br><span class="line">       access-key: &lt;yourAccessKey&gt;</span><br><span class="line">       secret-key: &lt;yourSecretKey&gt;</span><br><span class="line">       oss:</span><br><span class="line">        endpoint: oss-cn-chengdu.aliyuncs.com</span><br></pre></td></tr></table></figure>
 

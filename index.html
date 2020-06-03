@@ -119,6 +119,11 @@
       
         <p>springboot接入阿里云对象存储OSS</p>
 <h3 id="pom文件引入starter依赖"><a href="#pom文件引入starter依赖" class="headerlink" title="pom文件引入starter依赖"></a>pom文件引入starter依赖</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;com.alibaba.cloud&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-cloud-starter-alicloud-oss&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="yml文件加入-access-key-secret-key-endpoint"><a href="#yml文件加入-access-key-secret-key-endpoint" class="headerlink" title="yml文件加入 access-key,secret-key,endpoint"></a>yml文件加入 access-key,secret-key,endpoint</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line">   cloud:</span><br><span class="line">      alicloud:</span><br><span class="line">       access-key: &lt;yourAccessKey&gt;</span><br><span class="line">       secret-key: &lt;yourSecretKey&gt;</span><br><span class="line">       oss:</span><br><span class="line">        endpoint: oss-cn-chengdu.aliyuncs.com</span><br></pre></td></tr></table></figure>
+
+<h3 id="测试上传服务"><a href="#测试上传服务" class="headerlink" title="测试上传服务"></a>测试上传服务</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">@Autowired</span><br><span class="line">OSSClient ossClient;</span><br><span class="line"></span><br><span class="line">//gulimall-lipenghui 是oss上创建的bucket</span><br><span class="line">@Test</span><br><span class="line">public void testUpload() throws FileNotFoundException &#123;</span><br><span class="line"></span><br><span class="line">    InputStream inputStream = new FileInputStream(<span class="string">"C:\\Users\\32784\\Desktop\\yitaqi.jpg"</span>);</span><br><span class="line">    ossClient.putObject(<span class="string">"gulimall-lipenghui"</span>, <span class="string">"yitaqi.jpg"</span>, inputStream);</span><br><span class="line">    System.out.println(<span class="string">"文件上传成功..."</span>);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -130,10 +135,6 @@
 
       
 
-      
-        <p class="article-more-link">
-          <a class="hidden" href="/2020/06/03/springboot-oss/#more"> >></a>
-        </p>
       
       <div class="clearfix"></div>
     </div>
