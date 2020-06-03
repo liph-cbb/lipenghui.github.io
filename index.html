@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   
-  <title>jishu</title>
+  <title>lipenghui的blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
-<meta property="og:title" content="jishu">
+<meta property="og:title" content="lipenghui的blog">
 <meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="jishu">
+<meta property="og:site_name" content="lipenghui的blog">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="penghui li">
 <meta name="twitter:card" content="summary">
@@ -97,7 +97,7 @@
   
     <div class="article-meta">
       <a href="/2020/06/03/postName/" class="article-date">
-  	<time datetime="2020-06-03T08:11:38.000Z" itemprop="datePublished">2020-06-03</time>
+  	<time datetime="2020-06-03T08:11:39.012Z" itemprop="datePublished">2020-06-03</time>
 </a>
     </div>
   
@@ -108,7 +108,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/03/postName/">ddd我的</a>
+      <a class="article-title" href="/2020/06/03/postName/">springboot接入阿里云对象存储OSS</a>
     </h1>
   
 
@@ -117,7 +117,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>springboot接入阿里云对象存储OSS</p>
+<h3 id="pom文件引入starter依赖"><a href="#pom文件引入starter依赖" class="headerlink" title="pom文件引入starter依赖"></a>pom文件引入starter依赖</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;com.alibaba.cloud&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-cloud-starter-alicloud-oss&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="yml文件加入-access-key-secret-key-endpoint"><a href="#yml文件加入-access-key-secret-key-endpoint" class="headerlink" title="yml文件加入 access-key,secret-key,endpoint"></a>yml文件加入 access-key,secret-key,endpoint</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line">   cloud:</span><br><span class="line">      alicloud:</span><br><span class="line">       access-key: LTAI4FzjuLzT3mV7mZy6a6Yv</span><br><span class="line">       secret-key: FXsu94x00slPu73lIVn2kWECnZvvR3</span><br><span class="line">       oss:</span><br><span class="line">        endpoint: oss-cn-chengdu.aliyuncs.com</span><br></pre></td></tr></table></figure>
+
+<h3 id="测试上传服务"><a href="#测试上传服务" class="headerlink" title="测试上传服务"></a>测试上传服务</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">@Autowired</span><br><span class="line">OSSClient ossClient;</span><br><span class="line"></span><br><span class="line">//gulimall-lipenghui 是oss上创建的bucket</span><br><span class="line">@Test</span><br><span class="line">public void testUpload() throws FileNotFoundException &#123;</span><br><span class="line"></span><br><span class="line">    InputStream inputStream = new FileInputStream(<span class="string">"C:\\Users\\32784\\Desktop\\yitaqi.jpg"</span>);</span><br><span class="line">    ossClient.putObject(<span class="string">"gulimall-lipenghui"</span>, <span class="string">"yitaqi.jpg"</span>, inputStream);</span><br><span class="line">    System.out.println(<span class="string">"文件上传成功..."</span>);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
